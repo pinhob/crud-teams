@@ -6,4 +6,6 @@ const peopleController = require('../controllers/people.controller');
 
 router.get('/', peopleController.getAll);
 
+router.post('/new', peopleController.create);
+
 module.exports = router;
