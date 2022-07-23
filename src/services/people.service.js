@@ -22,9 +22,16 @@ const deleteById = (id) => {
   return People.findByIdAndDelete(id);
 }
 
+const updateById = async (id, person) => {
+  const updatedPerson = await People.findByIdAndUpdate(id, person);
+
+  return updatedPerson;
+};
+
 module.exports = {
   getAll,
   getById,
   create,
   deleteById,
+  updateById,
 };
