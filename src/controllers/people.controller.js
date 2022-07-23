@@ -8,7 +8,7 @@ const getAll = async (_req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-}
+};
 
 const create = async (req, res) => {
   try {
@@ -18,9 +18,21 @@ const create = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-}
+};
+
+const getById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const person = await peopleService.getById(id);
+
+    res.status(200).json(person);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 module.exports = {
   getAll,
   create,
+  getById,
 }
