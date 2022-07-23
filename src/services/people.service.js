@@ -1,12 +1,9 @@
-const getAll = () => {
-  const mockResult = [
-    {
-      id: 1,
-      name: 'John Doe',
-    }
-  ]
+const People = require('../database/models/People');
 
-  return Promise.resolve(mockResult);
+const getAll = async () => {
+  const people = await People.find({});
+
+  return people;
 };
 
 module.exports = {
