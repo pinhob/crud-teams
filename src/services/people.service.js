@@ -13,17 +13,18 @@ const getById = async (id) => {
 }
 
 const create = async (person) => {
-  console.log("AQUI", person);
-
   const newPerson = await People.create(person);
 
-  console.log("CHEGOU");
-
   return newPerson;
+}
+
+const deleteById = (id) => {
+  return People.findByIdAndDelete(id);
 }
 
 module.exports = {
   getAll,
   getById,
   create,
+  deleteById,
 };
