@@ -1,4 +1,5 @@
 const express = require('express');
+const { errorMiddleware } = require('../middlewares/errorMiddleware');
 const routes = require('../routes');
 
 const app = express();
@@ -10,5 +11,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/v1/', routes);
+
+app.use(errorMiddleware);
 
 module.exports = app;
