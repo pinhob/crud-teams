@@ -1,19 +1,13 @@
 const Team = require("../database/models/Team");
 const Joi = require('joi');
 const errorMessage = require('../utils/errorMessageConstructor');
-const verifyId = require('../utils/verifyId');
+const checkAndVerifyId = require('../utils/verifyAndValidateId');
 
 const TeamSchema = Joi.object({
   name: Joi.string().required(),
   description: Joi.string(),
   members: Joi.array().items(Joi.string()),
 });
-
-const checkAndVerifyId = (id) => {
-  const idIsValid = verifyId(id);
-
-  if (!idIsValid) throw errorMessage(400, 'Id is not in a valid format');
-};
 
 const create = async (data) => {
   const { error } = TeamSchema.validate(data);

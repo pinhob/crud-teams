@@ -1,7 +1,7 @@
 const People = require('../database/models/People');
 const Joi = require('joi');
 const errorMessage = require('../utils/errorMessageConstructor');
-const verifyId = require('../utils/verifyId');
+const checkAndVerifyId = require('../utils/verifyAndValidateId');
 
 const PersonSchema = Joi.object({
   name: Joi.string().required(),
@@ -28,8 +28,7 @@ const getAll = async () => {
 };
 
 const getById = async (id) => {
-  const idIsValid = verifyId(id);
-  if (!idIsValid) throw errorMessage(400, 'Id is not in a valid format');
+  checkAndVerifyId(id);
 
   const person = await People.findById(id);
   if (person === null) throw errorMessage(404, 'Id is not found');
@@ -38,15 +37,13 @@ const getById = async (id) => {
 }
 
 const deleteById = (id) => {
-  const idIsValid = verifyId(id);
-  if (!idIsValid) throw errorMessage(400, 'Id is not in a valid format');
+  checkAndVerifyId(id);
 
   return People.findByIdAndDelete(id);
 }
 
 const updateById = async (id, person) => {
-  const idIsValid = verifyId(id);
-  if (!idIsValid) throw errorMessage(400, 'Id is not in a valid format');
+  checkAndVerifyId(id);
 
   const updatedPerson = await People.findByIdAndUpdate(id, person, { new: true });
   if (updatedPerson === null) throw errorMessage(404, 'Id is not found');
