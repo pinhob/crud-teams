@@ -15,24 +15,30 @@ const register = async (data) => {
   if (error) throw (errorMessage(400, error.message));
 
   const userExists = await User.findOne({ email: data.email });
+
   if (userExists) throw (errorMessage(400, 'User already exists'));
 
   const user = await User.create(data);
   const token = generateToken({ id: user._id });
 
-  return { user, token };
+  user.password = undefined;
+
+  return { user: user, token };
 };
 
 const login = async (data) => {
   const { email, password } = data;
 
   const user = await User.findOne({ email }).select('+password');
+
   if (!user) throw errorMessage(400, 'Invalid email or password');
 
   const passwordIsValid = await bcrypt.compare(password, user.password);
   if (!passwordIsValid) throw errorMessage(400, 'Invalid email or password');
 
   const token = generateToken({ id: user._id });
+
+  user.password = undefined;
 
   return { user, token };
 };

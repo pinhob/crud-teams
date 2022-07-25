@@ -31,6 +31,7 @@ const getById = async (id) => {
   checkAndVerifyId(id);
 
   const person = await People.findById(id);
+
   if (person === null) throw errorMessage(404, 'Id is not found');
 
   return person;
@@ -46,6 +47,7 @@ const updateById = async (id, person) => {
   checkAndVerifyId(id);
 
   const updatedPerson = await People.findByIdAndUpdate(id, person, { new: true });
+
   if (updatedPerson === null) throw errorMessage(404, 'Id is not found');
 
   return updatedPerson;
