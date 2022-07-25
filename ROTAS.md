@@ -9,7 +9,7 @@ http://localhost:4242/v1/
 
 Todos os endpoints aqui listados complementam este endereço, como, por exemplo `http://localhost:4242/v1/auth/login`.
 
-Você também pode utilizar o arquivo EXEMPLOS___ no Insomnia para realizar testes na aplicação.
+Você também pode utilizar o arquivo `CRUD_Insomnia.json` no Insomnia para realizar testes na aplicação.
 
 ---
 ---

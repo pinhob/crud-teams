@@ -75,7 +75,7 @@ npm start
 ```
 Ou `npm run dev` para executar com o `Nodemon`. 
 
-**DICA**: Carregue o arquivo `EXEMPLOS...` no Insomnia para fazer requisições à aplicação mais rapidamente.
+**DICA**: Carregue o arquivo `CRUD_Insomnia.json` no Insomnia para fazer requisições à aplicação mais rapidamente.
 
 ## Estrutura do projeto
 Os arquivos de lógica da aplicação estão dentro da pasta `src`, que tem a seguinte estrutura:
