@@ -5,9 +5,25 @@ const PeopleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  age: {
-    type: Number
+  lastName: {
+    type: String,
+    required: true,
   },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  role: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+  },
+  age: {
+    type: Number,
+  }
 });
 
 const People = mongoose.model("People", PeopleSchema);
