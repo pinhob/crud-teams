@@ -75,7 +75,7 @@ npm start
 ```
 Ou `npm run dev` para executar com o `Nodemon`. 
 
-**DICA**: Carregue o arquivo `CRUD_Insomnia.json` no Insomnia para fazer requisições à aplicação mais rapidamente.
+**DICA**: Carregue o arquivo [`CRUD_Insomnia.json`](https://github.com/pinhob/crud-teams/blob/main/CRUD_Insomnia.json) no Insomnia para fazer requisições à aplicação mais rapidamente.
 
 ## Estrutura do projeto
 Os arquivos de lógica da aplicação estão dentro da pasta `src`, que tem a seguinte estrutura:
@@ -92,7 +92,7 @@ Os arquivos de lógica da aplicação estão dentro da pasta `src`, que tem a se
 ```
 
 ## Rotas
-Para acessar a **documentação de rotas** da aplicação, acesse o arquivo ROTAS.md.
+Para acessar a **documentação de rotas** da aplicação, acesse o arquivo [ROTAS.md](https://github.com/pinhob/crud-teams/blob/main/ROTAS.md).
 
 
 ## Próximos passos
