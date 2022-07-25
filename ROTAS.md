@@ -75,6 +75,7 @@ Você também pode utilizar o arquivo EXEMPLOS___ no Insomnia para realizar test
 
 ## Pessoas (`/people`)
 ### POST Criar pessoa (`/new`)
+**É necessário passar o header Authorization com o token gerado no momento do cadastro ou login**
 * Corpo da requisição:
 
 ```
@@ -151,6 +152,7 @@ Você também pode utilizar o arquivo EXEMPLOS___ no Insomnia para realizar test
 	}
 ```
 ## PATCH Atualizar informação da pessoa (`/:id`)
+**É necessário passar o header Authorization com o token gerado no momento do cadastro ou login**
 * Sem corpo da requisição. **Informar id pela URL**. 
 
 * Exemplo de resultado esperado: 
@@ -169,6 +171,7 @@ Você também pode utilizar o arquivo EXEMPLOS___ no Insomnia para realizar test
 ```
 
 ## DELETE Deletar pessoa (`/:id`)
+**É necessário passar o header Authorization com o token gerado no momento do cadastro ou login**
 * Sem corpo da requisição. **Informar id pela URL**. 
 
 * Exemplo de resultado esperado: 
@@ -188,6 +191,7 @@ Você também pode utilizar o arquivo EXEMPLOS___ no Insomnia para realizar test
 
 ## Equipes (`/teams`)
 ### POST Criar equipe (`/new`)
+**É necessário passar o header Authorization com o token gerado no momento do cadastro ou login**
 * Corpo da requisição:
 
 ```
@@ -264,6 +268,7 @@ Você também pode utilizar o arquivo EXEMPLOS___ no Insomnia para realizar test
 ```
 
 ### PUT Atualizar equipe (`/:id`)
+**É necessário passar o header Authorization com o token gerado no momento do cadastro ou login**
 * Sem corpo da requisição. **Informar id pela URL**. 
 
 * Exemplo de resultado esperado: 
@@ -281,6 +286,7 @@ Você também pode utilizar o arquivo EXEMPLOS___ no Insomnia para realizar test
 ```
 
 ### DELETE Deletar equipe (`/:id`)
+**É necessário passar o header Authorization com o token gerado no momento do cadastro ou login**
 * Sem corpo da requisição. **Informar id pela URL**. 
 
 * Exemplo de resultado esperado: 
