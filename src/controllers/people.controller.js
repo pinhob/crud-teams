@@ -22,7 +22,7 @@ const create = async (req, res, next) => {
 
 const getById = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const { id } = req.params;
     const person = await peopleService.getById(id);
 
     res.status(200).json(person);
@@ -33,7 +33,7 @@ const getById = async (req, res, next) => {
 
 const deleteById = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const { id } = req.params;
     const person = await peopleService.deleteById(id);
 
     res.status(200).json(person);
@@ -44,7 +44,7 @@ const deleteById = async (req, res, next) => {
 
 const updateById = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const { id } = req.params;
     const person = await peopleService.updateById(id, req.body);
 
     res.status(200).json(person);
